@@ -1,0 +1,124 @@
+/* Add this to your existing style.css or in the head section of your HTML */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+    font-family: 'Mukta', sans-serif;
+   
+}
+.navbar{
+    height: 10%;
+    background-color: darkgrey;
+    display: flex;
+    justify-content: space-around;
+    font-size: 18px;
+    align-items: center;
+}
+.name-text{
+    line-height: 1.2;
+
+}
+.name-text h4{
+    font-size:25px;
+}
+#close-btn,#menu-btn{
+    display: none;
+}
+#menu ul{
+    display: flex;
+    justify-content: space-evenly;
+}
+#menu ul li{
+    list-style: none;
+    margin: 0 25px;
+    /* line-height: 3.5; */
+}
+#Contact-btn{
+    font-weight: 600;
+    border-radius: 50px;
+    margin: 0px 25px;
+    padding: 8px;
+}
+.active{
+    display: flex;
+}
+
+/* #logo img{
+    max-width: 35%;
+    height: auto;
+} */
+
+
+/* Resppnsive ness  */
+@media screen and (max-width: 767px) {
+body{
+    background-color: blue;
+}
+.navbar{
+    justify-content: space-between;
+    /* padding: 10px 8px; */
+}
+#menu{
+    position: absolute;
+    width: 45vmax;
+    left: 260px;
+    top: 0px;
+    /* display: flex; */
+    display: none;
+    z-index: 999;
+    height: 93vmax; /* Allow the height to adjust based on content */
+    background-color: aqua;
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-end; /* Center items horizontally */
+}
+#menu ul li{
+    font-size: 35px;
+    padding: 5px 5px;
+}
+#menu ul li:hover{
+    border-radius: 15px;
+    background-color: aliceblue;
+}
+#menu ul{
+    margin: 7vmax 10vmax ;
+    display: flex;
+     flex-direction: column; /* Stack items vertically */
+    justify-content: center;
+    text-align: center;
+}
+#menu-btn{
+    z-index: 1;
+    display: block;
+    /* background-color: bisque; */
+    font-size: 40px;
+    padding: 5px 10px;
+    font-weight: 900; 
+}
+#close-btn{
+    display: block;
+    background-color: bisque;
+    font-size: 60px;
+    padding: 5px 10px;
+    font-weight: 900; 
+}
+
+#Contact-btn{
+    margin:45px 10px;
+    font-weight: 600;
+    border-radius: 50px;
+    font-size: 28px;
+    padding: 15px;
+}
+/* .close-btn{
+    display: block;
+    background-color: bisque;
+    font-size: 60px;
+    padding: 5px 10px;
+    font-weight: 900; 
+
+} */
+}
