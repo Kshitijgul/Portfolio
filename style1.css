@@ -15,11 +15,13 @@ html,body{
 }
 .navbar{
     height: 10%;
-    background-color: darkgrey;
+    /* background-color: darkgrey; */
     display: flex;
     justify-content: space-around;
     font-size: 18px;
     align-items: center;
+    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
 }
 .name-text{
     line-height: 1.2;
@@ -123,9 +125,9 @@ html,body{
         #close-btn{
             display: flex;
             justify-content: end;
-            background-color: bisque;
+            /* background-color: bisque; */
             font-size: 45px;
-            padding: 20px 20px;
+            padding: 9px 18px;
             font-weight: 900; 
         }
         #menu{
@@ -133,10 +135,11 @@ html,body{
             flex-direction: column;
             position: fixed;
             z-index: 999;
-            background-color: cornflowerblue;
+            background-color: aliceblue;
+            /* background-color: cornflowerblue; */
             top: 0vmax;
             right: -50vmax;
-            height: 56vmax;
+            height: 70vmax;
             width: 30vmax;
             transition: 0.5s;
 
