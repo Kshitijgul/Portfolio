@@ -1,0 +1,446 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Hanken Grotesk", sans-serif;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background-color: var(--color4);
+}
+
+a {
+    text-decoration: none;
+}
+
+:root {
+    --color1: white;
+    --color2: black;
+    --color3: #EAE3EA;
+    --color4: #e1e1ed;
+}
+
+#circle {
+    border-radius: 50%;
+    background-color: #ffffff;
+    transform: translate(-50%, -50%);
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    z-index: 99;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+    mix-blend-mode: difference;
+}
+
+#loader {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    color: aliceblue;
+    background-color: #000000;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    clip-path: inset(0 0 0 0);
+    /* Initial clip-path value */
+    transition: bottom 0.5s ease, clip-path 0.6s ease;
+    /* Transition clip-path property */
+}
+
+
+#loader h1 {
+    /* color: #fff; */
+    color: var(--background-color1);
+    font-family: "Roboto Slab", serif;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 3px;
+    font-size: 4vw;
+    text-transform: uppercase;
+}
+
+#loader .line-box {
+    margin-top: 2%;
+    padding: 1%;
+    width: 50%;
+    height: -2px;
+    /* border: 3px solid #267591; */
+    border-radius: 20px;
+}
+
+.line {
+    height: 20px;
+    border-radius: 20px;
+    background: #67D295;
+    animation: loading 2s forwards cubic-bezier(0, 0, 0, 0);
+}
+
+
+.page1 {
+    background-color: var(--color4);
+    height: 100vh;
+    width: 100%;
+}
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++ */
+.navbar {
+    height: 8vh;
+    background-color: var(--white-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0% 3%;
+}
+
+.name-text {
+    line-height: 1.2;
+    font-family: "Noto Sans JP", sans-serif;
+    font-family: "Nunito", sans-serif;
+
+}
+
+.name-text h4 {
+    text-transform: uppercase;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 8vw;
+}
+
+.navmenu ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2.5vw;
+}
+
+.navmenu ul li {
+    list-style: none;
+
+}
+
+.navmenu ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++ */
+.checkbox1 {
+    opacity: 0;
+    position: absolute;
+}
+
+.checkbox-label1 {
+    background-color: #111;
+    color: #fff;
+    width: 50px;
+    height: 26px;
+    border-radius: 50px;
+    position: relative;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checkbox-label1 .ball1 {
+    background-color: #fff;
+    color: #fff;
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    border-radius: 50%;
+    transition: transform 0.2s linear;
+}
+
+.checkbox1:checked+.checkbox-label1 .ball1 {
+    transform: translateX(24px);
+}
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++ */
+
+.checkbox2 {
+    opacity: 0;
+    position: absolute;
+}
+
+.checkbox-label2 {
+    background-color: #111;
+    color: #fff;
+    width: 50px;
+    height: 26px;
+    border-radius: 50px;
+    position: relative;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checkbox-label2 .ball2 {
+    background-color: #fff;
+    color: #fff;
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    border-radius: 50%;
+    transition: transform 0.2s linear;
+}
+
+.checkbox2:checked+.checkbox-label2 .ball2 {
+    transform: translateX(24px);
+}
+
+/* VERTICAL MENU  */
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* VERTICAL MENU  */
+.hamburger_menu {
+    position: fixed;
+    z-index: 13;
+    top: 2vh;
+    right: 3vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 9vh;
+    height: 9vh;
+    background-color: antiquewhite;
+    border-radius: 50%;
+    transition: all 1s;
+}
+
+.hamburger_menu:hover {
+    background-color: #002855;
+    cursor: pointer;
+
+}
+
+.menu {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: aqua; */
+}
+
+.menu span {
+    display: block;
+    width: 40px;
+    height: 4px;
+    background-color: black;
+    margin: 6px 0;
+    transition: transform 0.3s ease;
+    border-radius: 4px;
+}
+
+.hamburger_menu:hover .menu span {
+    background-color: #ffffff;
+}
+
+.menu.openmenu #line3 {
+    transform: translateY(-10px) rotate(45deg);
+}
+
+.menu.openmenu #line2 {
+    height: 3px;
+    /* Ensure that the height matches other lines */
+    opacity: 0;
+}
+
+.menu.openmenu #line1 {
+    transform: translateY(10px) rotate(-45deg);
+}
+
+/* +++++++++++++++++++++++++++++++++++ */
+/* +++++++++++++++++++++++++++++++++++ */
+.vertical_menu {
+    width: 45%;
+    height: 100vh;
+    top: 0%;
+    right: -80%;
+    color: #000000;
+    background-color: bisque;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    /* justify-content: center; */
+    position: fixed;
+    z-index: 12;
+    border-top-left-radius: 50%;
+    /* Adjust border-radius properties */
+    border-bottom-left-radius: 50%;
+    /* Adjust border-radius properties */
+    transition: right 1s ease, border-top-left-radius 0.5s ease, border-bottom-left-radius 0.5s ease;
+    /* Add transitions for smooth animations */
+}
+
+.vertical_menu.openmenu {
+    right: 0;
+    /* Slide in from the right when menu is open */
+    border-top-left-radius: 0%;
+    /* Adjust border-radius properties */
+    border-bottom-left-radius: 0%;
+    /* Adjust border-radius properties */
+}
+
+.vertical_menu_list {
+    padding: 12vh;
+    /* width: 20%; */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center;
+    align-items: center;
+    text-align: center; */
+}
+
+.vertical_menu_list h3 {
+    padding: 1vw;
+}
+
+.vertical_menu ul {
+    list-style: none;
+
+}
+
+.vertical_menu ul li {
+    /* list-style: none; */
+    text-align: center;
+
+
+    padding: 1vw;
+
+}
+
+.vertical_menu ul li a {
+    color: #000000;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.1vw;
+    font-family: "Noto Sans JP", sans-serif;
+
+}
+
+.frame span {
+    cursor: pointer;
+    height: 5vw;
+    text-align: center;
+    font-size: 3vw;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: baseline;
+    color: #000;
+    /* background-color: red; */
+    padding: 0 0vw;
+    /* display: block; */
+    /* transform: translateY(-5vw); */
+}
+
+.frame {
+    /* background-color: yellow; */
+    height: 5vw;
+    display: block;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    color: #000;
+}
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+.page1main {
+    height: 92vh;
+    background-color: red;
+}
+
+
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++ */
+/* +++++++++++++++++++++++++++++++++++++++++++++++ */
+/* +++++++++++++++++++++++++++++++++++++++++++++++ */
+/* +++++++++++++++++++++++++++++++++++++++++++++++ */
+
+.page2 {
+    background-color: var(--color4);
+    height: 100vh;
+    width: 100%;
+}
+
+.page3 {
+    background-color: var(--color4);
+    height: 100vh;
+    width: 100%;
+}
+
+
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* Responsive  */
+@media only screen and (max-width: 600px) {
+    body {
+        #circle {
+            display: none;
+        }
+
+        .navmenu {
+            display: none;
+        }
+
+        .hamburger_menu {
+            top: 1vh;
+            width: 7vh;
+            height: 7vh;
+        }
+
+        .menu span {
+            width: 35px;
+        }
+
+        .vertical_menu {
+            width: 60%;
+        }
+
+        .vertical_menu ul li {
+            /* list-style: none; */
+            text-align: center;
+            padding: 4vw 0vw;
+        }
+
+        .vertical_menu_list {
+            padding: 12vh 4vh;
+        }
+
+        .vertical_menu_list h3 {
+            font-size: 4vw;
+        }
+
+        .frame {
+            height: 9vw;
+        }
+
+        .frame span {
+            height: 10vw;
+            font-size: 8vw;
+        }
+
+    }
+}

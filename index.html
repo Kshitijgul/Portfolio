@@ -1,69 +1,336 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        body {
-            background: #333;
-            margin: 50px 0 0 0;  
-        }
-
-        .container{
-            position: relative;
-            width: 100%; /* Set width to 100% for responsiveness */
-            text-align: center;  
-        }
-
-        .box {
-            position: relative;
-            text-align: center;  
-            display: inline-block;
-            background: #161616;
-            margin: 20px auto; /* Center horizontally */
-            padding: 20px; /* Adjust padding for space inside the box */
-            width: auto; /* Set width to auto to fit content */
-            max-width: 300px; /* Set max-width for responsiveness */
-            box-shadow:
-                /* Underglow */ 0px 2px 1px rgba(255,255,255,.2),
-                /* Outerglow */ 0px 1px 3px rgba(255,255,255,.3),
-                /* Innerglow */ 0px 0px 15px rgba(200,200,200,.1) inset,
-                0px 3px 5px rgba(0,0,0,1);
-            border-radius: 5px;
-            transition: all .6s cubic-bezier(1.000, -0.360, 0.000, 1.385);
-        }
-
-        .box:hover{
-            box-shadow:
-                /* Underglow */ 0px 5px 2px rgba(200,200,200,1),
-                /* Outerglow */ 0px 12px 40px rgba(255,255,255,.3),
-                /* Innerglow */ 0px -5px 10px rgba(255,255,255,.1) inset,
-                0px 0px 5px rgba(255,255,255,1),
-                0px 1px 3px rgba(255,255,255,1);
-            transition: all .3s cubic-bezier(1.000, -0.360, 0.000, 1.385);
-        }
-
-        .box a {
-            color: rgba(55,55,55,1);
-            text-shadow:
-                0px 0px 6px rgba(255,255,255,.1),
-                3px 3px 6px rgba(0,0,0,1) inset;
-            font: normal small-caps bold 20px/20px "Helvetica"; /* Adjust font size */
-            text-decoration: none; /* Remove underline from link */
-        }
-
-        .box a:hover {
-            color: rgba(255,255,255,1);
-            text-shadow: 0px 0px 10px rgba(255,255,255,.7);
-        }
+      @import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Karla:ital,wght@0,200..800;1,200..800&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Outfit:wght@100..900&family=Roboto+Slab:wght@393&display=swap");
     </style>
-</head>
-<body>
-    <div class="container">
-        <div class="box">
-            <p><a href="https://kshitijdev.netlify.app/">Click Here For the Portfolio</a></p>
-        </div>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="circle"></div>
+    <div id="loader">
+      <div class="loader-text">
+        <h1>WelCome to The Showcase</h1>
+        <h2>- " Kshitij Guladhe "</h2>
+      </div>
+      <div class="line-box">
+        <div class="line"></div>
+      </div>
     </div>
-</body>
+    <div class="vertical_nav">
+      <div class="hamburger_menu" style="position: fixed">
+        <div class="menu">
+          <div>
+            <span id="line1"></span>
+            <span id="line2"></span>
+            <span id="line3"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="vertical_menu">
+      <!-- <div class="hamburger_menu" style="position: fixed">
+          <div class="menu">
+            <div>
+              <span id="line1"></span>
+              <span id="line2"></span>
+              <span id="line3"></span>
+            </div>
+          </div>
+        </div> -->
+      <div class="vertical_menu_list">
+        <h3 style="opacity: 0.5">Navigation</h3>
+        <hr />
+        <ul>
+          <li>
+            <a class="frame" href="index.html">
+              <span>Home</span>
+              <span>Home</span>
+            </a>
+          </li>
+          <li>
+            <a class="frame" href="#page2for">
+              <span>about</span>
+              <span>about</span>
+            </a>
+          </li>
+          <li>
+            <a class="frame" href="work.html">
+              <span>Work</span>
+              <span>Work</span>
+            </a>
+          </li>
+          <li>
+            <a class="frame" href="contact.html">
+              <span>Contact</span>
+              <span>Contact</span>
+            </a>
+          </li>
+        </ul>
+        <div class="dark-mode-btn2">
+          <input type="checkbox" class="checkbox2" id="checkbox2" />
+          <label for="checkbox2" class="checkbox-label2">
+            <i class="ri-moon-fill"></i>
+            <i class="ri-sun-fill"></i>
+            <span class="ball2"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="smooth-scroll">
+      <div class="page1">
+        <div class="navbar">
+          <div class="name-text">
+            <h4>Kshitij Guladhe</h4>
+            <h6>Portfolio</h6>
+          </div>
+          <nav>
+            <div class="navmenu">
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#page2for">about</a></li>
+                <li><a href="work.html">Work</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li>
+                  <div class="dark-mode-btn">
+                    <input type="checkbox" class="checkbox1" id="checkbox1" />
+                    <label for="checkbox1" class="checkbox-label1">
+                      <i class="ri-moon-fill"></i>
+                      <i class="ri-sun-fill"></i>
+                      <span class="ball1"></span>
+                    </label>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+        <div class="page1main">
+          <div class="page1main1">
+            <h2>Hi There !</h2>
+            <h1>I'am Kshitij Guladhe</h1>
+            <div class="scroll-role">
+              <div>
+                <span>WEB DEVLOPER</span>
+                <span>Frontend DEVLOPER</span>
+                <span> Youtuber </span>
+                <span>Web devloper</span>
+              </div>
+            </div>
+            <button><a href="kshitij_guladhe_resume1.pdf" download="Kshitij_Guladhe_Resume.pdf">My Resume</a></button>
+            <!-- <div class="scrolldown">
+              <i class="ri-arrow-down-line"></i>
+              <h5>Scroll Down</h5>
+
+            </div> -->
+            <div class="mousescroll">
+              <div class="mouse"></div>
+              <div class="arrow-scroll">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+          </div>
+          <div class="page1main2">
+            <img src="Profile_Designer.png" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="page2">
+        <div class="page2part1">
+          <h4>
+            Helping Brands to Stand Out in the digital Era . Together we will
+            set the new status quo . No Nonsense ,always on the cutting edge .
+          </h4>
+          <p>
+            As a web developer, I'm fueled by my passion for design, coding, and
+            interaction, paving my way into the dynamic world of web
+            development.
+          </p>
+        </div>
+        <div class="page2part2">
+          <a href="#">About me </a>
+        </div>
+        <div class="page2part3">
+          <div class="about-backg">
+            <div class="about-backg1">
+              <img src="profile.JPG" alt="" />
+            </div>
+            <div class="about-backg2">
+              <p>
+                Hi, I'm Kshitij Guladhe, a third-year Computer Science
+                Engineering student at Pimpri Chinchwad College of Engineering,
+                Pune. Originally from Nagpur, I now live in Pimpri Chinchwad. My
+                passion lies in technology, especially web development, data
+                science, and machine learning. Outside of academics, I run a
+                YouTube vlogging channel with over 3000 subscribers. It's my
+                creative outlet, allowing me to share experiences and connect
+                with a wider audience.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page3">
+        <div class="container1">
+          <div class="tabsection">
+            <div class="tab_box">
+              <button class="tab_btn active">Programming Languages</button>
+              <button class="tab_btn">Development Languages</button>
+              <button class="tab_btn">Databases</button>
+              <!-- <div class="line"></div> -->
+            </div>
+            <div class="content_box">
+              <div class="content active">
+                <h2>Programming Languages</h2>
+                <div class="skill-bar-contanier">
+                  <p class="skill-text">C Language 40%</p>
+                  <div class="skill-bar">
+                    <div class="skill-bar-fill" style="width: 40%"></div>
+                  </div>
+                </div>
+                <div class="skill-bar-contanier">
+                  <p class="skill-text">JAVA  70%</p>
+                  <div class="skill-bar">
+                    <div class="skill-bar-fill" style="width: 70%"></div>
+                  </div>
+                </div>
+                <div class="skill-bar-contanier">
+                  <p class="skill-text">C++  30%</p>
+                  <div class="skill-bar">
+                    <div class="skill-bar-fill" style="width: 30%"></div>
+                  </div>
+                </div>
+                <div class="skill-bar-contanier">
+                  <p class="skill-text">Python 60%</p>
+                  <div class="skill-bar">
+                    <div class="skill-bar-fill" style="width: 60%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="content">
+                <h2>Development Languages</h2>
+                <div class="skill-bar-contanier">
+                  <p class="skill-text">HTML 80%</p>
+                  <div class="skill-bar">
+                    <div class="skill-bar-fill" style="width: 80%"></div>
+                  </div>
+                </div>
+                <div class="skill-bar-contanier">
+                  <p class="skill-text">CSS 75%%</p>
+                  <div class="skill-bar">
+                    <div class="skill-bar-fill" style="width: 75%"></div>
+                  </div>
+                </div>
+                <div class="skill-bar-contanier">
+                  <p class="skill-text">JAVASCRIPT 70%</p>
+                  <div class="skill-bar">
+                    <div class="skill-bar-fill" style="width: 70%"></div>
+                  </div>
+                </div>
+                <div class="skill-bar-contanier">
+                  <p class="skill-text">REACT JS 40%</p>
+                  <div class="skill-bar">
+                    <div class="skill-bar-fill" style="width: 40%"></div>
+                  </div>
+                </div>
+                <div class="skill-bar-contanier">
+                  <p class="skill-text">NODE JS 30%</p>
+                  <div class="skill-bar">
+                    <div class="skill-bar-fill" style="width: 30%"></div>
+                  </div>
+                </div>
+                <div class="skill-bar-contanier">
+                  <p class="skill-text">EXPRESS 20%</p>
+                  <div class="skill-bar">
+                    <div class="skill-bar-fill" style="width: 20%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="content">
+                <h2>Databases</h2>
+                <div class="skill-bar-contanier">
+                  <p class="skill-text">SQL  60%</p>
+                  <div class="skill-bar">
+                    <div class="skill-bar-fill" style="width: 60%"></div>
+                  </div>
+                </div>
+                <div class="skill-bar-contanier">
+                  <p class="skill-text">MONGO DB 50%</p>
+                  <div class="skill-bar">
+                    <div class="skill-bar-fill" style="width: 50%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="familiar-tools">
+
+        </div>
+      </div>
+      <div class="page4">
+        <div class="education">
+          <section class="col">
+            <header class="title">
+              <h2>EDUCATION <i class="ri-graduation-cap-fill"></i></h2>
+            </header>
+            <div class="contents">
+              <div class="box">
+                <h4>2021-2025</h4>
+                <h3>Pimpri Chinchwad College OF Engineering , Pune</h3>
+                <h3>
+                  B.Tech IN Computer Science Engineering Specialization with
+                  Artificila Intilligence and Machine Learning
+                </h3>
+              </div>
+              <div class="box">
+                <h4>2019-2021</h4>
+                <h3>Shivaji Science College , Nagpur</h3>
+                <h3>SSC - STATE BOARD MAHARASHTRA</h3>
+              </div>
+
+              <div class="box">
+                <h4>2017-2019</h4>
+                <h3>Vidya Bhushan High school, Nagpur</h3>
+                <h3>HSC - STATE BOARD MAHARASHTRA</h3>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <footer>
+        <div class="footer-content">
+          <p>&copy; 2024 Kshitij . All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="script.js"></script>
+  </body>
 </html>
