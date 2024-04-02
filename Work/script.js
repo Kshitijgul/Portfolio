@@ -61,21 +61,6 @@ window.addEventListener("mousemove",function(dets){
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-
-function loading(){
-  tl.to("#loader", {
-    top: "-150%",
-    borderTopLeftRadius: "70%",
-    borderBottomLeftRadius: "70%",
-    borderBottomRightRadius: "70%", // Add this line to animate the right side as well
-    delay: 0.7,
-    duration: 3,
-    ease: "power3.out", // Adjust easing for animation curve
-  });
-
-}
-loading();
-
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // Vertical Menu
 const hamburgerMenu = document.querySelector(".hamburger_menu");
@@ -111,36 +96,33 @@ locoScroll.on("scroll", function (args) {
 const frames = document.querySelectorAll(".frame");
 
 if (frames.length > 0) {
-  if (window.innerWidth >= 767) {
-    frames.forEach(frame => {
-      frame.addEventListener("mousemove", function(event) {
-        const spans = frame.querySelectorAll('span');
-        gsap.to(circle, {
-          scale: 4
-        });
-        gsap.to(spans, {
-          duration: 0.4,
-          y: "-5vw"
-        });
-      });
-
-      frame.addEventListener("mouseleave", function(event) {
-        gsap.to(circle, {
-          scale: 1
-        });
-        gsap.to(".frame span", {
-          duration: 0.4,
-          y: "0vw"
-        });
+  frames.forEach(frame => {
+    frame.addEventListener("mousemove", function(event) {
+      const spans = frame.querySelectorAll('span');
+      gsap.to(circle,{
+        scale:4
+    })
+      gsap.to(spans, {
+        duration: 0.4,
+        y: "-5vw"
       });
     });
-  }
+    frame.addEventListener("mouseleave", function(event) {
+      gsap.to(circle,{
+        scale:1
+    })
+      gsap.to(".frame span",{
+        duration:.4,
+        y:"0vw"
+
+    })
+    })
+  });
 } else {
   console.error('No elements with class "frame" found.');
 }
-
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // ABOUT ME EFFECT 
 
 var hoverMouse = function(els) {
@@ -223,28 +205,7 @@ var hoverMouse = function(els) {
   });
 };
 
-hoverMouse(document.querySelectorAll('.page2part2 a'));
-
-
-
-
-
-// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-//  TABS 
-
-const tabs = document.querySelectorAll('.tab_btn');
-const all_content = document.querySelectorAll('.content');
-
-tabs.forEach((tab,index) =>{
-  tab.addEventListener('click',()=>{
-    tabs.forEach(tab => {tab.classList.remove('active')});
-    tab.classList.add('active');
-
-    all_content.forEach(content => content.classList.remove('active'));
-    all_content[index].classList.add('active');
-  })
-})
-
+hoverMouse(document.querySelectorAll('.page3part1 a'));
 
 
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

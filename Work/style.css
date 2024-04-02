@@ -21,8 +21,10 @@ a {
 :root {
     --color1: white;
     --color2: black;
-    --color3: #EAE3EA;
+    --color3: #e8e9eb;
     --color4: #e1e1ed;
+    --color5: #4C5258;
+    --color6:#059862;
 }
 
 #circle {
@@ -40,51 +42,6 @@ a {
     mix-blend-mode: difference;
 }
 
-#loader {
-    position: fixed;
-    height: 100vh;
-    width: 100%;
-    color: aliceblue;
-    background-color: #000000;
-    z-index: 20;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    clip-path: inset(0 0 0 0);
-    /* Initial clip-path value */
-    transition: bottom 0.5s ease, clip-path 0.6s ease;
-    /* Transition clip-path property */
-}
-
-
-#loader h1 {
-    /* color: #fff; */
-    color: var(--background-color1);
-    font-family: "Roboto Slab", serif;
-    font-style: normal;
-    font-weight: 400;
-    letter-spacing: 3px;
-    font-size: 4vw;
-    text-transform: uppercase;
-}
-
-#loader .line-box {
-    margin-top: 2%;
-    padding: 1%;
-    width: 50%;
-    height: -2px;
-    /* border: 3px solid #267591; */
-    border-radius: 20px;
-}
-
-.line {
-    height: 20px;
-    border-radius: 20px;
-    background: #67D295;
-    animation: loading 2s forwards cubic-bezier(0, 0, 0, 0);
-}
 
 
 .page1 {
@@ -92,6 +49,7 @@ a {
     height: 100vh;
     width: 100%;
 }
+
 
 /* +++++++++++++++++++++++++++++++++++++++++++++++ */
 .navbar {
@@ -133,6 +91,7 @@ nav {
 }
 
 .navmenu ul li a {
+    color: var(--color2);
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 600;
@@ -371,7 +330,42 @@ nav {
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 .page1main {
     height: 92vh;
-    background-color: red;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.page1main1{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5vw;
+}
+.page1main1 h1{
+    font-size: 10vw;
+    line-height: 10vw;
+
+}
+.page1main1 p{
+    padding-top:2vw ;
+    font-size: 1vw;
+    /* line-height: 10vw; */
+
+}
+.page1main2{
+    width: 50%;
+    height: 100%;
+}
+
+
+
+.page1main2 img{
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+
 }
 
 
@@ -385,12 +379,99 @@ nav {
     background-color: var(--color4);
     height: 100vh;
     width: 100%;
+
 }
+.page2part{
+    display: flex;
+}
+.page2part1{
+    width: 50%;
+    height: 100%;
+    padding: 5vw;
+}
+.heading{
+    padding:0vw 5vw;
+}
+.heading h2{
+    width: 50%;
+
+    font-size: 5vw;
+    border-bottom: 0.5vw solid var(--color2);
+}
+.comp-info{
+    line-height: 4.5vw;
+}
+.comp-info h3{
+    font-size: 3vw;
+    color: var(--color5);
+}
+.comp-info h3 span{
+    /* color:#a7a2f9; */
+    color:#8b85ff;
+}
+.comp-info #check-button a{
+    color: var(--color1);
+    background-color: var(--color6);
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid var(--color2);
+    transition: ease 1s;
+}
+.comp-info #check-button a:hover{
+    background-color: transparent;
+    color: var(--color2);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    
+}
+/* +++++++++++++++++++++++++++
+ */
+ .page2part2{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5vw;
+ }
+ .page2part2 p{
+    font-size: 1.8vw;
+ }
+
+
 
 .page3 {
     background-color: var(--color4);
-    height: 100vh;
     width: 100%;
+}
+.page3part1{
+    position: relative;
+    display: flex;
+    justify-content: end;
+    margin-right: 5vw;
+    padding: 3vw;
+}
+.page3part1 a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    background: #000;
+    width: 10vw;
+    border-radius: 50%;
+    height: 10vw;
+    color: #fff;
+    font-size: 2.2vw;
+    margin-left: 6vw;
+}
+.page3part2{
+    padding: 0vw 5vw;
+}
+.page3part2 p{
+    font-size: 5vw;
+    font-weight: 600;
+}
+.page3part2 p code{
+color:var(--color6);
 }
 
 
