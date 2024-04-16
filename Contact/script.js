@@ -137,6 +137,90 @@ if (frames.length > 0) {
   console.error('No elements with class "frame" found.');
 }
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+var hoverMouse = function(els) {
+  els.forEach(function(el) {
+    var self = el;
+    var hover = false;
+    var offsetHoverMax = parseFloat(self.getAttribute("offset-hover-max")) || 0.7;
+    var offsetHoverMin = parseFloat(self.getAttribute("offset-hover-min")) || 0.5;
+
+    var attachEventsListener = function() {
+      window.addEventListener("mousemove", function(e) {
+        var hoverArea = hover ? offsetHoverMax : offsetHoverMin;
+
+        // cursor
+        var cursor = {
+          x: e.clientX,
+          y: e.clientY - window.scrollY
+        };
+
+        // size
+        var width = self.offsetWidth;
+        var height = self.offsetHeight;
+
+        // position
+        var offset = self.getBoundingClientRect();
+        var elPos = {
+          x: offset.left + width / 2,
+          y: offset.top + height / 2
+        };
+
+        // comparaison
+        var x = cursor.x - elPos.x;
+        var y = cursor.y - elPos.y;
+
+        // dist
+        var dist = Math.sqrt(x * x + y * y);
+
+        // mutex hover
+        var mutHover = false;
+
+        // anim
+        if (dist < width * hoverArea) {
+          mutHover = true;
+          if (!hover) {
+            hover = true;
+          }
+          onHover(x, y);
+        }
+
+        // reset
+        if (!mutHover && hover) {
+          onLeave();
+          hover = false;
+        }
+      });
+    };
+
+    var onHover = function(x, y) {
+      gsap.to(self, {
+        duration: 0.4,
+        x: x * 0.8,
+        y: y * 0.8,
+        rotation: x * 0.05,
+        ease: "power2.out"
+      });
+    };
+
+    var onLeave = function() {
+      gsap.to(self, {
+        duration: 0.7,
+        x: 0,
+        y: 0,
+        scale: 1,
+        rotation: 0,
+        ease: "elastic.out(1.2, 0.4)"
+      });
+    };
+
+    attachEventsListener();
+  });
+};
+
+hoverMouse(document.querySelectorAll('input[type=submit]'));
+
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
