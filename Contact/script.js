@@ -223,6 +223,16 @@ hoverMouse(document.querySelectorAll('input[type=submit]'));
 
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+function sendMail(){
+  let parms = {
+    name:document.getElementById('name').value,
+    email:document.getElementById('email').value,
+    subject:document.getElementById('subject').value,
+
+  }
+  emailjs.send("service_4e72sg6","template_weg0e49",parms).then(alert("Email Sent Successfully !"))
+}
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

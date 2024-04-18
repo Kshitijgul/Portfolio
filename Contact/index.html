@@ -16,6 +16,17 @@
       href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"
     />
     <link rel="stylesheet" href="style.css" />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "Y0kXR8pmu7U9yGcAbz",
+        });
+      })();
+    </script>
   </head>
   <body>
     <div id="circle"></div>
@@ -156,9 +167,9 @@
                   rows="5"
                 ></textarea>
               </div>
-              <hr>
+              <hr />
 
-              <input type="submit" value="Submit" class="formelement">
+              <input type="submit" value="Submit" onclick="sendMail()" class="formelement" />
             </form>
           </div>
           <div class="page1main22">
@@ -167,13 +178,21 @@
             <h4>+91-78208811++</h4>
             <h3>Socials</h3>
             <ul>
-              <li><a href="#"><i class="ri-linkedin-box-fill"></i>Linkedin</a></li>
-              <li><a href="#"><i class="ri-instagram-fill"></i>Instagram</a></li>
-              <li><a href="#"><i class="ri-facebook-box-fill"></i>Facebook</a></li>
+              <li>
+                <a href="#"><i class="ri-linkedin-box-fill"></i>Linkedin</a>
+              </li>
+              <li>
+                <a href="#"><i class="ri-instagram-fill"></i>Instagram</a>
+              </li>
+              <li>
+                <a href="#"><i class="ri-facebook-box-fill"></i>Facebook</a>
+              </li>
             </ul>
             <h3>Lets Collaborate</h3>
             <ul>
-              <li><a href="#"><i class="ri-github-fill"></i>Github</a></li>
+              <li>
+                <a href="#"><i class="ri-github-fill"></i>Github</a>
+              </li>
             </ul>
           </div>
         </div>

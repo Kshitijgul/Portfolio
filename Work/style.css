@@ -429,6 +429,7 @@ nav {
     width: 50%;
     height: 100%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     padding: 5vw;
@@ -481,7 +482,6 @@ color:var(--color6);
 }
 .project-container .project-section{
     width: 100%;
-    height: 50vh;
     /* background-color: #059862; */
     display: flex;
     padding: 4vw;
@@ -497,9 +497,9 @@ color:var(--color6);
     height: 100%;
     border-radius: 15px;
 }
-.projectsection2{
+/* .projectsection2{
     line-height: 2vw;
-}
+} */
 .projectsection2 > h2{
     margin-bottom: 1vw;
     /* background-color: #002855; */
@@ -509,7 +509,7 @@ color:var(--color6);
     list-style-position: inside;
 }
 #check-button{
-    margin-top: 1vw;
+    margin-top: 3vw;
 }
 #check-button a{
     color: var(--color1);
@@ -549,7 +549,7 @@ footer {
 
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /* Responsive  */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
     body {
         #circle {
             display: none;
@@ -594,6 +594,66 @@ footer {
         .frame span {
             height: 10vw;
             font-size: 8vw;
+        }
+
+        /* +++++++++++++++++++++++++++++++ */
+        .page1main{
+            flex-direction: column-reverse;
+        }
+        .page1main1{
+            width: 100%;
+            height: 50%;
+        }
+        .page1main1 h1{
+            font-size: 17vw;
+            line-height: 17vw;
+        }
+        .page1main1 p{
+            font-size: 5vw;
+        }
+        .heading h2{
+            font-size: 10vw;
+            width: 100%;
+        }
+        .page1main2{
+            width: 100%;
+            height: 50%;
+
+        }
+        .page2part{
+            flex-wrap: wrap;
+        }
+        .page2part1{
+            width: 100%;
+        }
+        .page2part2{
+            width: 100%;
+        }
+        .comp-info{
+            line-height: 8.5vw;
+        }
+        #check-button{
+            margin-top: 4vw;
+        }
+        .comp-info h3{
+            font-size: 4vw;
+        }
+        .page2part2 p{
+            font-size: 5.5vw;
+        }
+        .page3part1 a{
+            height: 20vw;
+            width: 20vw;
+            font-size: 4.2vw;
+        }
+        .project-section{
+            flex-direction: column;
+        }
+        .projectsection1{
+            width: 100%;
+        }
+        #project-section2{
+            flex-direction: column;
         }
 
     }
